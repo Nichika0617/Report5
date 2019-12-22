@@ -2,14 +2,25 @@ package jp.ac.uryukyu.ie.e195765;
 
 public class LivingThing {
     private String name;
+    /**
+     * hero,enemyの名前を受け取るメソッド。
+     *
+     * @return String name hero,enemyの名前。
+     */
     public String getName(){
         return name;
     }
+
     public void setName(String name){
         this.name = name;
     }
 
     private int hitPoint;
+    /**
+     * hero,enemyのHP(体力)を受け取るメソッド
+     *
+     * @return int hitpoint hero,enemyの体力
+     */
     public int getHitPoint() {
         return hitPoint;
     }
@@ -19,8 +30,12 @@ public class LivingThing {
     }
 
     private int attack;
+    /**
+     * hero,enemyのAttack(攻撃力)を受け取るメソッド
+     *
+     * @return int attack hero,enemyの攻撃力
+     */
     public int getAttack(){
-
         return attack;
     }
     public void setAttack(int attack){
@@ -28,6 +43,11 @@ public class LivingThing {
     }
 
     private boolean dead;
+    /**
+     * hero,enemyが生きている(false)か死んでいる(True)かを受け取るメソッド。
+     *
+     * @return boolean dead hero,enemyの生死
+     */
     public boolean getdead() {
 
         return dead;
@@ -39,7 +59,7 @@ public class LivingThing {
 
 
     /**
-     *
+     * 生きている状態:dead = false
      * @param name Hero,enemyの名前
      * @param maximumHP　Hero,enemyのHP
      * @param attack　Hero,enemyの攻撃力
@@ -52,6 +72,7 @@ public class LivingThing {
         this.attack = attack;
     }
     /**
+     * hero,enemyが生きているか死んでいるか決めるメソッド。
      * @return boolean
      */
     public boolean isDead(){
@@ -70,7 +91,11 @@ public class LivingThing {
             opponent.wounded(damage);
         }
     }
-
+    /**
+     * attackで確定したダメージをHPから減らす処理を行うメソッド。
+     *
+     * @param damage 受けるダメージ
+     */
     public void wounded(int damage){
         hitPoint -= damage;
         if( hitPoint < 0 ) {
